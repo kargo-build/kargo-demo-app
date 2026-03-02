@@ -10,3 +10,5 @@ settings:
 sources:
   - github: kargo-build/kargo-native-git-lib
     version: main
+dependencies:
+  - co.touchlab:kermit:2.0.4

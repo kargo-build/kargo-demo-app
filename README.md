@@ -8,7 +8,8 @@ Get ready to say goodbye to complex build setups and hello to seamless developme
 
 - **Blazing Fast Kotlin/Native:** Compiles straight to a standalone, native Linux executable! 🏎️💨
 - **Zero Config Git Dependencies:** Watch the magic happen as Kargo fetches and uses a library *directly* from a Git repository (`github: kargo-build/kargo-native-git-lib`)! No publishing needed! 🤯
-- **Unbelievably Simple:** Just one tiny `module.yaml` file to rules it all!
+- **Traditional Maven Dependencies:** Best of both worlds! Easily mix Git dependencies with traditional Maven artifacts (like `co.touchlab:kermit` for awesome logging)! 📦
+- **Unbelievably Simple:** Just one tiny `module.yaml` file to rule them all!
 
 ## 🛠️ Prerequisites (It's so simple!)
 
@@ -49,19 +50,19 @@ You can run your shiny new application like this:
    ```
 
 You should see this glorious output:
+```text
+Info: Hello, World! (from git source)
 ```
-Hello, World! (from git source)
-```
-*Yes, that string came all the way from another Git repository! How cool is that?!* 😎
+*Yes, that string came all the way from another Git repository, and it's being logged by a traditional Maven dependency! How cool is that?!* 😎
 
 ## 📂 Project Structure (No bloat here!)
 
-- `module.yaml`: The absolute MVP! This tiny configuration file defines what we're building and magically tells Kargo to grab our Git dependency!
-- `src/com/example/demo/main.kt`: The main application code that uses a class (`Greeter`) cheerfully fetched from the internet!
+- `module.yaml`: The absolute MVP! This tiny configuration file defines what we're building and magically tells Kargo to grab our Git dependency AND our Maven package!
+- `src/com/example/demo/main.kt`: The main application code that uses a class (`Greeter`) cheerfully fetched from the internet, and logs it using Kermit!
 - `kargo`: Your handy-dandy wrapper script!
 
 ## 🧠 How the Magic Works
 
-Take a look at `module.yaml`! It literally just says it needs the `kargo-build/kargo-native-git-lib` repo. When you run Kargo, it automatically goes out to the web, brings down the repository, compiles it, and links it directly into your `app.kexe`! 
+Take a look at `module.yaml`! It literally just says it needs the `kargo-build/kargo-native-git-lib` repo and the `co.touchlab:kermit` Maven dependency. When you run Kargo, it automatically goes out to the web, brings down the repository, fetches the Maven package, compiles everything, and links it directly into your `app.kexe`! 
 
 The future of Kotlin/Native builds is here, and it's spectacular! 🎉
