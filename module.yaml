@@ -1,0 +1,12 @@
+product:
+  type: linux/app
+  platforms: [linuxX64]
+
+settings:
+  native:
+    entryPoint: com.example.demo.main
+    output: dist/app
+
+sources:
+  - github: kargo-build/kargo-native-git-lib
+    version: main
